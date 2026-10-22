@@ -1,6 +1,6 @@
-# Notenwart website
+# notenwart website
 
-Static one-page site for [Notenwart](https://github.com/notenwart/notenwart), deployed to GitHub Pages by
+Static one-page site for [notenwart](https://github.com/notenwart/notenwart), deployed to GitHub Pages by
 `.github/workflows/pages.yml` on every push to `main`, under the custom domain in `CNAME`.
 
 No build step, no framework, no external resources (no fonts, scripts or embeds from other servers), no cookies, no
