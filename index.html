@@ -1,0 +1,120 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: AGPL-3.0-or-later -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notenwart – sheet music for schools, orchestras and bands</title>
+  <meta name="description" content="Notenwart is a free, self-hosted sheet music library: upload scores, split them into parts, and every player sees exactly the parts they need – online and offline.">
+  <meta name="theme-color" content="#F5EFE3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121A2B" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://notenwart.app/">
+  <meta property="og:title" content="Notenwart">
+  <meta property="og:description" content="Sheet music for schools, orchestras and bands – every player sees their own part.">
+  <meta property="og:image" content="https://notenwart.app/assets/og.png">
+  <meta property="og:url" content="https://notenwart.app/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <picture>
+      <source srcset="assets/mark-dark.svg" media="(prefers-color-scheme: dark)">
+      <img class="mark" src="assets/mark-light.svg" alt="" width="132" height="132">
+    </picture>
+    <h1 class="wordmark">Notenwart</h1>
+    <p class="tagline">Your sheet music, sorted and at hand.</p>
+    <p class="lead">A free, self-hosted sheet music library for music schools, orchestras, bands and choirs. Upload
+      scores, split them into parts – and every player sees exactly the parts they need, on phone, tablet or music
+      stand, online and offline.</p>
+    <p class="status">In development · first pilot with a music school in Brandenburg</p>
+    <nav class="actions">
+      <a class="button primary" href="https://github.com/notenwart/notenwart">Follow on GitHub</a>
+      <a class="button" href="#self-hosting">Run it yourself</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="steps" aria-labelledby="how">
+      <h2 id="how">How it works</h2>
+      <ol>
+        <li>
+          <h3>Upload</h3>
+          <p>Drop in PDFs – a full score, single parts, or a scan with everything in one file.</p>
+        </li>
+        <li>
+          <h3>Split</h3>
+          <p>Pick the pages of each part. Notenwart recognises “Trompete_2.pdf” as trumpet 2 and cuts the parts
+            without touching the quality.</p>
+        </li>
+        <li>
+          <h3>Play</h3>
+          <p>Give the work to an ensemble. Each member finds their own part under “My music” – nothing else.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="features">
+      <h2 id="features">What it does</h2>
+      <div class="features">
+        <article>
+          <h3>Only your part</h3>
+          <p>Members see the parts for the instruments they play in their ensembles. Leaders see everything,
+            including the score. No more shared folders with a hundred files.</p>
+        </article>
+        <article>
+          <h3>Ensembles and roles</h3>
+          <p>Admins, librarians, conductors and teachers, players and pupils – each with the rights they need.
+            Invitations by link or email.</p>
+        </article>
+        <article>
+          <h3>Made for the stand</h3>
+          <p>A full-screen viewer with half-page turns, two pages side by side, and Bluetooth page-turner pedals.
+            The screen stays on while you play.</p>
+        </article>
+        <article>
+          <h3>Offline</h3>
+          <p>Keep an ensemble’s parts on the device for rehearsals without Wi-Fi. When access ends, the copies go
+            at the next sync.</p>
+        </article>
+        <article>
+          <h3>Your server, your data</h3>
+          <p>Runs on the school’s own server or with a provider it trusts. No tracking, no telemetry, nothing
+            loaded from other servers – pupils are often minors.</p>
+        </article>
+        <article>
+          <h3>Free software</h3>
+          <p>Open source under the GNU AGPL. Installs as an app from the browser on phones, tablets and computers –
+            no app store needed.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="self-hosting" aria-labelledby="run">
+      <h2 id="run">Run it yourself</h2>
+      <p>One container with PostgreSQL and S3-compatible storage (Garage is included):</p>
+<pre><code>git clone https://github.com/notenwart/notenwart
+cd notenwart
+deploy/generate-secrets.sh &gt; deploy/.env
+docker compose -f deploy/compose.yaml up -d</code></pre>
+      <p>Then open the server in a browser and create the first admin account. Details are in the
+        <a href="https://github.com/notenwart/notenwart#readme">README</a>.</p>
+      <p class="note">Notenwart provides the software. Whoever runs a server is responsible for the rights to the
+        sheet music shared on it.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Notenwart is free software under the
+      <a href="https://github.com/notenwart/notenwart/blob/main/LICENSE">GNU AGPL-3.0-or-later</a>.
+      © 2026 falkOSS – Falcon Lake Open Source Software gUG (haftungsbeschränkt) i. G. – a
+      <a href="https://falkoss.org">falkOSS</a> project.</p>
+    <p><a href="https://falkoss.org/impressum.html">Imprint</a> · <a href="https://falkoss.org/datenschutz.html">Privacy</a></p>
+  </footer>
+</body>
+</html>
